@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, RefreshCw, TrendingUp, Target, Edit3, Save, Loader } from 'lucide-react';
+import { BookOpen, RefreshCw, TrendingUp, Target, Save, Loader } from 'lucide-react';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import './StudyPage.css';
@@ -43,6 +43,16 @@ const StudyPage = () => {
   useEffect(() => {
     loadReports();
   }, []);
+
+  // 🔧 모바일 링크를 데스크탑 링크로 변환하는 함수
+  const forceDesktopLink = (url) => {
+    if (!url) return url;
+    // 네이버 모바일 링크를 데스크탑 링크로 변환
+    if (url.includes('m.stock.naver.com')) {
+      return url.replace('m.stock.naver.com', 'finance.naver.com');
+    }
+    return url;
+  };
 
   // Save daily note to Google Sheets
   const saveDailyNote = async () => {
@@ -273,7 +283,7 @@ const StudyPage = () => {
     }
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -524,7 +534,7 @@ JSON 형식으로 답변하세요:
                             alignItems: 'center'
                           }}>
                             <a
-                              href={report.link}
+                              href={forceDesktopLink(report.link)}
                               target="_blank"
                               rel="noopener noreferrer"
                               style={{
@@ -637,107 +647,6 @@ JSON 형식으로 답변하세요:
                             </p>
                           </div>
                         )}
-
-                        {/* Market Note */}
-                        <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid #E5E7EB' }}>
-                          <div style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            marginBottom: '12px'
-                          }}>
-                            <h5 style={{ fontSize: '14px', fontWeight: '600', color: '#1F2937', margin: 0 }}>
-                              📝 내 학습 메모
-                            </h5>
-                            {!isEditingMarketNote && (
-                              <button
-                                onClick={() => setIsEditingMarketNote(true)}
-                                style={{
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                  gap: '4px',
-                                  padding: '6px 12px',
-                                  backgroundColor: 'white',
-                                  border: '1px solid #D1D5DB',
-                                  borderRadius: '6px',
-                                  fontSize: '12px',
-                                  cursor: 'pointer',
-                                  color: '#4B5563'
-                                }}
-                              >
-                                <Edit3 size={12} />
-                                {marketNote ? '수정' : '작성'}
-                              </button>
-                            )}
-                          </div>
-
-                          {isEditingMarketNote ? (
-                            <div>
-                              <textarea
-                                value={marketNote}
-                                onChange={(e) => setMarketNote(e.target.value)}
-                                placeholder="시황 분석에서 배운 내용을 메모하세요..."
-                                rows={4}
-                                style={{
-                                  width: '100%',
-                                  padding: '12px',
-                                  border: '1px solid #D1D5DB',
-                                  borderRadius: '6px',
-                                  fontSize: '14px',
-                                  fontFamily: 'inherit',
-                                  resize: 'vertical'
-                                }}
-                              />
-                              <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
-                                <button
-                                  onClick={saveMarketNote}
-                                  style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '4px',
-                                    padding: '8px 16px',
-                                    backgroundColor: '#4F46E5',
-                                    color: 'white',
-                                    border: 'none',
-                                    borderRadius: '6px',
-                                    fontSize: '13px',
-                                    fontWeight: '500',
-                                    cursor: 'pointer'
-                                  }}
-                                >
-                                  <Save size={14} />
-                                  저장
-                                </button>
-                                <button
-                                  onClick={() => setIsEditingMarketNote(false)}
-                                  style={{
-                                    padding: '8px 16px',
-                                    backgroundColor: 'white',
-                                    color: '#6B7280',
-                                    border: '1px solid #D1D5DB',
-                                    borderRadius: '6px',
-                                    fontSize: '13px',
-                                    cursor: 'pointer'
-                                  }}
-                                >
-                                  취소
-                                </button>
-                              </div>
-                            </div>
-                          ) : (
-                            <div style={{
-                              padding: '12px',
-                              backgroundColor: 'white',
-                              borderRadius: '6px',
-                              fontSize: '14px',
-                              color: '#4B5563',
-                              border: '1px solid #E5E7EB',
-                              minHeight: '60px'
-                            }}>
-                              {marketNote || '메모를 작성해보세요.'}
-                            </div>
-                          )}
-                        </div>
                       </div>
                     )}
                   </>
@@ -847,7 +756,7 @@ JSON 형식으로 답변하세요:
                             {/* Row 2: 리포트 제목 (링크) */}
                             <div style={{ marginBottom: '12px' }}>
                               <a
-                                href={item.link}
+                                href={forceDesktopLink(item.link)}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
@@ -947,7 +856,7 @@ JSON 형식으로 답변하세요:
                             {/* Row 2: 리포트 제목 */}
                             <div>
                               <a
-                                href={report.link}
+                                href={forceDesktopLink(report.link)}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
