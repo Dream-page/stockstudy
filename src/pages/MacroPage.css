@@ -1,0 +1,291 @@
+/* Region Selector */
+.region-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+/* Indicator Card */
+.indicator-card {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.indicator-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.indicator-name {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.indicator-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.indicator-change {
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* Trend Styles */
+.trend-up {
+  color: #10b981;
+}
+
+.trend-down {
+  color: #ef4444;
+}
+
+.trend-stable {
+  color: #6b7280;
+}
+
+/* Indices Grid */
+.indices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.index-item {
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.index-name {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.index-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.index-change {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* News List */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-item {
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.news-category {
+  background: #eef2ff;
+  color: #667eea;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.news-date {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.news-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.news-summary {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Commodities List */
+.commodities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.commodity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.commodity-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.commodity-icon {
+  font-size: 2rem;
+}
+
+.commodity-name {
+  font-weight: 700;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.commodity-stats {
+  text-align: right;
+}
+
+.commodity-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.commodity-change {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Calendar List */
+.calendar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calendar-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.calendar-date {
+  text-align: center;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 70px;
+}
+
+.calendar-day {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #667eea;
+  line-height: 1;
+}
+
+.calendar-month {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.calendar-content {
+  flex: 1;
+}
+
+.calendar-content h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.calendar-content p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.calendar-importance {
+  padding: 6px 16px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.calendar-importance.high {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.calendar-importance.medium {
+  background: #fef3c7;
+  color: #f59e0b;
+}
+
+.calendar-importance.low {
+  background: #e5e7eb;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .region-selector {
+    flex-direction: column;
+  }
+
+  .indicator-icon {
+    font-size: 2rem;
+  }
+
+  .indicator-value {
+    font-size: 1.5rem;
+  }
+
+  .indices-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendar-date {
+    width: 100%;
+  }
+}

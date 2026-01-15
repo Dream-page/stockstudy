@@ -1,0 +1,77 @@
+.stock-card {
+  background: white;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.stock-card:hover {
+  background: #f9fafb;
+}
+
+.stock-card:active {
+  background: #f3f4f6;
+}
+
+.stock-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stock-info {
+  flex: 1;
+}
+
+.stock-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.stock-quantity {
+  font-size: 13px;
+  color: #999;
+}
+
+.stock-value {
+  text-align: right;
+}
+
+.stock-value-amount {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.stock-pl {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stock-pl.profit {
+  color: #ff4757;
+}
+
+.stock-pl.loss {
+  color: #5f76ff;
+}
+
+.stock-footer {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f5f5f5;
+}
+
+.stock-category {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+}

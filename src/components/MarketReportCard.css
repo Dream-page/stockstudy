@@ -1,0 +1,83 @@
+.market-report-card {
+  background: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 12px;
+}
+
+.market-report-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+.market-report-card:active {
+  transform: translateY(0);
+}
+
+.report-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.report-date {
+  font-size: 13px;
+  color: #999;
+  font-weight: 500;
+}
+
+.report-firm {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.report-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.external-icon {
+  flex-shrink: 0;
+  color: #667eea;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.market-report-card:hover .external-icon {
+  opacity: 1;
+}
+
+.report-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #f5f5f5;
+}
+
+.report-views {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #999;
+}
+
+.report-views svg {
+  color: #bbb;
+}

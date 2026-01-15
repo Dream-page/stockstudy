@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-text-primary;
+    @apply font-sans antialiased;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f9fafb;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  /* Mobile container */
+  .mobile-container {
+    @apply max-w-mobile mx-auto min-h-screen bg-background;
+    @apply relative pb-20; /* Space for bottom nav */
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-card rounded-3xl shadow-card;
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .card:hover {
+    @apply shadow-card-hover;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-text-primary text-white rounded-2xl px-6 py-3;
+    @apply font-medium transition-all duration-200;
+    @apply hover:opacity-90 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-background text-text-primary rounded-2xl px-6 py-3;
+    @apply font-medium transition-all duration-200 border border-gray-300;
+    @apply hover:bg-gray-100 active:scale-95;
+  }
+
+  /* Modal backdrop */
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black bg-opacity-40 z-40;
+    @apply transition-opacity duration-300;
+  }
+
+  /* Modal sheet */
+  .modal-sheet {
+    @apply fixed bottom-0 left-0 right-0 z-50;
+    @apply bg-white rounded-t-3xl shadow-2xl;
+    @apply transform transition-transform duration-300 ease-out;
+  }
+
+  /* Input styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-2xl border border-gray-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-text-primary focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+
+  /* Text area styles */
+  .textarea {
+    @apply w-full px-4 py-3 rounded-2xl border border-gray-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-text-primary focus:border-transparent;
+    @apply transition-all duration-200 resize-none;
+    min-height: 120px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

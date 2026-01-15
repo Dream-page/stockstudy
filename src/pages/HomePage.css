@@ -1,0 +1,248 @@
+/* Welcome Section */
+.home-welcome {
+  margin-bottom: 32px;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  color: white;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+}
+
+.home-subtitle {
+  font-size: 1.125rem;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* Stat Cards */
+.stat-card {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.stat-positive {
+  color: #10b981;
+}
+
+.stat-negative {
+  color: #ef4444;
+}
+
+/* Quick Actions */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.quick-action-card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.quick-action-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.quick-action-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* Activity List */
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.activity-type {
+  background: #eef2ff;
+  color: #667eea;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.activity-details {
+  flex: 1;
+}
+
+.activity-stock {
+  font-weight: 700;
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.activity-amount {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.activity-date {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+/* Holdings List */
+.holdings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.holding-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.holding-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.holding-symbol {
+  font-weight: 800;
+  color: #111827;
+  font-size: 1.125rem;
+}
+
+.holding-shares {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.holding-stats {
+  text-align: right;
+}
+
+.holding-value {
+  font-weight: 700;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.holding-pl {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Insights */
+.insights {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.insight-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.insight-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.insight-content h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.insight-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #9ca3af;
+}
+
+.empty-state p {
+  margin: 0 0 16px 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 1.875rem;
+  }
+
+  .home-subtitle {
+    font-size: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .quick-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .holding-symbol {
+    font-size: 1rem;
+  }
+}
